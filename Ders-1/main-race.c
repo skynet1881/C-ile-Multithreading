@@ -4,9 +4,9 @@
 
 int counter = 0;
 
-void * thread_function()
+void * thread_function(void * arg)
 {
-    for(int i = 0; i < 10000; i++)
+    for (int i=0; i<100000; i++)
     {
         counter++;
     }
@@ -27,5 +27,6 @@ int main(void)
     pthread_join(thread2, NULL);
 
     printf("Final counter value: %d\n", counter);
+
     return 0;
 }
